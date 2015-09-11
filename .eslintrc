@@ -1,0 +1,32 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "comma-dangle": 1,
+    "no-unused-expressions": 1,
+    "no-unused-vars": 1,
+    "strict": 0,
+    "react/jsx-uses-react": 1,
+    "space-after-keywords": [1, "always"],
+    "no-var": 1,
+    "prefer-const": 1,
+    "object-curly-spacing": [2, "always"],
+    "computed-property-spacing": [2, "never"],
+    "array-bracket-spacing": [2, "never"]
+  },
+
+  "ecmaFeatures": {
+    "jsx": true
+  },
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "globals": {
+    "BROWSER": true
+  },
+
+  "plugins": ["react"]
+}
