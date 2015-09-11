@@ -2,7 +2,7 @@
   "name": "react-flexgrid-css-modules",
   "version": "0.1.0",
   "description": "React Flexgrid components built for use with css modules.",
-  "main": "./lib/index.js",
+  "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
