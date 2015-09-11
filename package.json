@@ -1,0 +1,24 @@
+{
+  "name": "react-flexgrid-css-modules",
+  "version": "0.1.0",
+  "description": "React Flexgrid components built for use with css modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sricho/react-flexgrid-css-modules.git"
+  },
+  "keywords": [
+    "flexgrid",
+    "react",
+    "cssmodules"
+  ],
+  "author": "Stuart Richardson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sricho/react-flexgrid-css-modules/issues"
+  },
+  "homepage": "https://github.com/sricho/react-flexgrid-css-modules#readme"
+}
