@@ -9,6 +9,7 @@
     "space-after-keywords": [1, "always"],
     "no-var": 1,
     "prefer-const": 1,
+    "semi": [2, "always"],
     "object-curly-spacing": [2, "always"],
     "computed-property-spacing": [2, "never"],
     "array-bracket-spacing": [2, "never"]

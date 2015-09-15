@@ -3,6 +3,30 @@ import classnames from "classnames";
 import flexboxgrid from "flexboxgrid/dist/flexboxgrid.css";
 
 class GridRow extends React.Component {
+  static propTypes = {
+    reverse: React.PropTypes.bool,
+    xsAlign: React.PropTypes.string,
+    smAlign: React.PropTypes.string,
+    mdAlign: React.PropTypes.string,
+    lgAlign: React.PropTypes.string,
+    xsVAlign: React.PropTypes.string,
+    smVAlign: React.PropTypes.string,
+    mdVAlign: React.PropTypes.string,
+    lgVAlign: React.PropTypes.string
+  };
+
+  static defaultProps = {
+    reverse: false,
+    xsAlign: null,
+    smAlign: null,
+    mdAlign: null,
+    lgAlign: null,
+    xsVAlign: null,
+    smVAlign: null,
+    mdVAlign: null,
+    lgVAlign: null
+  };
+
   render() {
     let reverseClass = "";
     let xsAlignClass = "";
@@ -61,29 +85,5 @@ class GridRow extends React.Component {
     );
   }
 }
-
-GridRow.propTypes = {
-  reverse: React.PropTypes.bool,
-  xsAlign: React.PropTypes.string,
-  smAlign: React.PropTypes.string,
-  mdAlign: React.PropTypes.string,
-  lgAlign: React.PropTypes.string,
-  xsVAlign: React.PropTypes.string,
-  smVAlign: React.PropTypes.string,
-  mdVAlign: React.PropTypes.string,
-  lgVAlign: React.PropTypes.string
-};
-
-GridRow.defaultProps = {
-  reverse: false,
-  xsAlign: null,
-  smAlign: null,
-  mdAlign: null,
-  lgAlign: null,
-  xsVAlign: null,
-  smVAlign: null,
-  mdVAlign: null,
-  lgVAlign: null
-};
 
 export default GridRow;
