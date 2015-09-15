@@ -3,6 +3,17 @@ import classnames from "classnames";
 import flexboxgrid from "flexboxgrid/dist/flexboxgrid.css";
 
 class GridColumn extends React.Component {
+  static propTypes = {
+    xs: React.PropTypes.number,
+    sm: React.PropTypes.number,
+    md: React.PropTypes.number,
+    lg: React.PropTypes.number,
+    xsOffset: React.PropTypes.number,
+    smOffset: React.PropTypes.number,
+    mdOffset: React.PropTypes.number,
+    lgxsOffset: React.PropTypes.number
+  };
+
   render() {
     let extraSmallClass = "";
     let smallClass = "";
@@ -14,20 +25,32 @@ class GridColumn extends React.Component {
     let largeOffsetClass = "";
 
     if (this.props.xs) {
-      extraSmallClass = flexboxgrid[`col-xs-${this.props.xs}`];
-      if (this.props.xs === 0) { extraSmallClass = flexboxgrid[`col-xs`] }
+      if (this.props.xs === 0) {
+        extraSmallClass = flexboxgrid[`col-xs`];
+      } else {
+        extraSmallClass = flexboxgrid[`col-xs-${this.props.xs}`];
+      }
     }
     if (this.props.sm) {
-      smallClass = flexboxgrid[`col-sm-${this.props.xs}`];
-      if (this.props.sm === 0) { smallClass = flexboxgrid[`col-sm`] }
+      if (this.props.sm === 0) {
+        smallClass = flexboxgrid[`col-sm`];
+      } else {
+        smallClass = flexboxgrid[`col-sm-${this.props.xs}`];
+      }
     }
     if (this.props.md) {
-      mediumClass = flexboxgrid[`col-md-${this.props.md}`];
-      if (this.props.md === 0) { mediumClass = flexboxgrid[`col-md`] }
+      if (this.props.md === 0) {
+        mediumClass = flexboxgrid[`col-md`];
+      } else {
+        mediumClass = flexboxgrid[`col-md-${this.props.md}`];
+      }
     }
     if (this.props.lg) {
-      largeClass = flexboxgrid[`col-lg-${this.props.lg}`];
-      if (this.props.lg === 0) { largeClass = flexboxgrid[`col-lg`] }
+      if (this.props.lg === 0) {
+        largeClass = flexboxgrid[`col-lg`];
+      } else {
+        largeClass = flexboxgrid[`col-lg-${this.props.lg}`];
+      }
     }
 
     if (this.props.xsOffset) {
@@ -59,15 +82,5 @@ class GridColumn extends React.Component {
   }
 };
 
-GridColumn.propTypes = {
-  xs: React.PropTypes.number,
-  sm: React.PropTypes.number,
-  md: React.PropTypes.number,
-  lg: React.PropTypes.number,
-  xsOffset: React.PropTypes.number,
-  smOffset: React.PropTypes.number,
-  mdOffset: React.PropTypes.number,
-  lgxsOffset: React.PropTypes.number
-};
 
 export default GridColumn;
