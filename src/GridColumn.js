@@ -11,7 +11,7 @@ class GridColumn extends React.Component {
     xsOffset: React.PropTypes.number,
     smOffset: React.PropTypes.number,
     mdOffset: React.PropTypes.number,
-    lgxsOffset: React.PropTypes.number
+    lgOffset: React.PropTypes.number
   };
 
   render() {
