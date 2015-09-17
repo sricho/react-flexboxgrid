@@ -68,6 +68,7 @@ class GridColumn extends React.Component {
 
     return (
       <div className={classnames(
+        this.props.className,
         extraSmallClass,
         extraSmallOffsetClass,
         smallClass,

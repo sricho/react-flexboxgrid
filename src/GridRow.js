@@ -70,6 +70,7 @@ class GridRow extends React.Component {
 
     return (
       <div className={classnames(
+        this.props.className,
         flexboxgrid.row,
         reverseClass,
         xsAlignClass,
