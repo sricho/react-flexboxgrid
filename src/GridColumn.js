@@ -11,7 +11,7 @@ class GridColumn extends React.Component {
     xsOffset: React.PropTypes.number,
     smOffset: React.PropTypes.number,
     mdOffset: React.PropTypes.number,
-    lgOffset: React.PropTypes.number
+    lgOffset: React.PropTypes.number,
   };
 
   render() {
@@ -66,7 +66,7 @@ class GridColumn extends React.Component {
       largeOffsetClass = flexboxgrid[`col-lg-offset-${this.props.lgOffset}`];
     }
 
-    return(
+    return (
       <div className={classnames(
         extraSmallClass,
         extraSmallOffsetClass,
@@ -80,7 +80,7 @@ class GridColumn extends React.Component {
       </div>
     );
   }
-};
+}
 
 
 export default GridColumn;

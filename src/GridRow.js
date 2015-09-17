@@ -12,7 +12,7 @@ class GridRow extends React.Component {
     xsVAlign: React.PropTypes.string,
     smVAlign: React.PropTypes.string,
     mdVAlign: React.PropTypes.string,
-    lgVAlign: React.PropTypes.string
+    lgVAlign: React.PropTypes.string,
   };
 
   static defaultProps = {
@@ -24,7 +24,7 @@ class GridRow extends React.Component {
     xsVAlign: null,
     smVAlign: null,
     mdVAlign: null,
-    lgVAlign: null
+    lgVAlign: null,
   };
 
   render() {
@@ -68,7 +68,7 @@ class GridRow extends React.Component {
       lgVAlignClass = flexboxgrid[`${this.props.lgVAlign}-lg`];
     }
 
-    return(
+    return (
       <div className={classnames(
         flexboxgrid.row,
         reverseClass,
