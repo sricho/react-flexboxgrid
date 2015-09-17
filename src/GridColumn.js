@@ -1,17 +1,17 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import classnames from "classnames";
 import flexboxgrid from "flexboxgrid/dist/flexboxgrid.css";
 
 class GridColumn extends React.Component {
   static propTypes = {
-    xs: React.PropTypes.number,
-    sm: React.PropTypes.number,
-    md: React.PropTypes.number,
-    lg: React.PropTypes.number,
-    xsOffset: React.PropTypes.number,
-    smOffset: React.PropTypes.number,
-    mdOffset: React.PropTypes.number,
-    lgOffset: React.PropTypes.number,
+    xs: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    sm: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    md: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    lg: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    xsOffset: PropTypes.number,
+    smOffset: PropTypes.number,
+    mdOffset: PropTypes.number,
+    lgOffset: PropTypes.number,
   };
 
   render() {
@@ -25,28 +25,28 @@ class GridColumn extends React.Component {
     let largeOffsetClass = "";
 
     if (this.props.xs) {
-      if (this.props.xs === 0) {
+      if (this.props.xs === "auto") {
         extraSmallClass = flexboxgrid[`col-xs`];
       } else {
         extraSmallClass = flexboxgrid[`col-xs-${this.props.xs}`];
       }
     }
     if (this.props.sm) {
-      if (this.props.sm === 0) {
+      if (this.props.sm === "auto") {
         smallClass = flexboxgrid[`col-sm`];
       } else {
         smallClass = flexboxgrid[`col-sm-${this.props.xs}`];
       }
     }
     if (this.props.md) {
-      if (this.props.md === 0) {
+      if (this.props.md === "auto") {
         mediumClass = flexboxgrid[`col-md`];
       } else {
         mediumClass = flexboxgrid[`col-md-${this.props.md}`];
       }
     }
     if (this.props.lg) {
-      if (this.props.lg === 0) {
+      if (this.props.lg === "auto") {
         largeClass = flexboxgrid[`col-lg`];
       } else {
         largeClass = flexboxgrid[`col-lg-${this.props.lg}`];
