@@ -35,7 +35,7 @@ class GridColumn extends React.Component {
       if (this.props.sm === "auto") {
         smallClass = flexboxgrid[`col-sm`];
       } else {
-        smallClass = flexboxgrid[`col-sm-${this.props.xs}`];
+        smallClass = flexboxgrid[`col-sm-${this.props.sm}`];
       }
     }
     if (this.props.md) {
