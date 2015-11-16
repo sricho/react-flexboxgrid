@@ -36,7 +36,7 @@
   "homepage": "https://github.com/sricho/react-flexboxgrid#readme",
   "peerDependencies": {
     "react": "^0.13.3",
-    "flexboxgrid": "^6.2.0"
+    "flexboxgrid": "^6.3.0"
   },
   "dependencies": {
     "classnames": "^2.1.3"
