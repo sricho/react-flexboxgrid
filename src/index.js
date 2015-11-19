@@ -3,5 +3,5 @@ import GridColumn from "./GridColumn";
 
 export {
   GridRow,
-  GridColumn
+  GridColumn,
 };
