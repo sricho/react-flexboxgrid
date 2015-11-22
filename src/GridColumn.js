@@ -25,7 +25,7 @@ class GridColumn extends React.Component {
     let mediumOffsetClass = "";
     let largeOffsetClass = "";
 
-    let styles = this.props.styles;
+    const styles = this.props.styles;
 
     if (this.props.xs) {
       if (this.props.xs === "auto") {

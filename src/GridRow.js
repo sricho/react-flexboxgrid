@@ -40,7 +40,7 @@ class GridRow extends React.Component {
     let mdVAlignClass = "";
     let lgVAlignClass = "";
 
-    let styles = this.props.styles;
+    const styles = this.props.styles;
 
     if (this.props.reverse) {
       reverseClass = flexboxgrid.reverse;
