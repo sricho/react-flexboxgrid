@@ -12,6 +12,7 @@ class GridColumn extends React.Component {
     smOffset: PropTypes.number,
     mdOffset: PropTypes.number,
     lgOffset: PropTypes.number,
+    styles: PropTypes.object,
   };
 
   render() {
@@ -23,6 +24,8 @@ class GridColumn extends React.Component {
     let smallOffsetClass = "";
     let mediumOffsetClass = "";
     let largeOffsetClass = "";
+
+    let styles = this.props.styles;
 
     if (this.props.xs) {
       if (this.props.xs === "auto") {
@@ -76,7 +79,8 @@ class GridColumn extends React.Component {
         mediumClass,
         mediumOffsetClass,
         largeClass,
-        largeOffsetClass)}>
+        largeOffsetClass)}
+        style={styles}>>
         {this.props.children}
       </div>
     );
