@@ -80,7 +80,7 @@ class GridColumn extends React.Component {
         mediumOffsetClass,
         largeClass,
         largeOffsetClass)}
-        style={styles}>>
+        style={styles}>
         {this.props.children}
       </div>
     );
