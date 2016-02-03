@@ -13,76 +13,49 @@ class GridColumn extends React.Component {
     mdOffset: PropTypes.number,
     lgOffset: PropTypes.number,
     styles: PropTypes.object,
+    tagName: PropTypes.string,
+  };
+
+  static defaultProps = {
+    tagName: "div",
   };
 
   render() {
-    let extraSmallClass = "";
-    let smallClass = "";
-    let mediumClass = "";
-    let largeClass = "";
-    let extraSmallOffsetClass = "";
-    let smallOffsetClass = "";
-    let mediumOffsetClass = "";
-    let largeOffsetClass = "";
+    const {
+      xs, sm, md, lg,
+      xsOffset, smOffset, mdOffset, lgOffset,
+      styles, tagName, className, children,
+    } = this.props;
 
-    const styles = this.props.styles;
+    const classes = classnames({
+      [flexboxgrid["col-xs"]]: xs && xs === "auto",
+      [flexboxgrid["col-sm"]]: sm && sm === "auto",
+      [flexboxgrid["col-md"]]: md && md === "auto",
+      [flexboxgrid["col-lg"]]: lg && lg === "auto",
 
-    if (this.props.xs) {
-      if (this.props.xs === "auto") {
-        extraSmallClass = flexboxgrid[`col-xs`];
-      } else {
-        extraSmallClass = flexboxgrid[`col-xs-${this.props.xs}`];
-      }
-    }
-    if (this.props.sm) {
-      if (this.props.sm === "auto") {
-        smallClass = flexboxgrid[`col-sm`];
-      } else {
-        smallClass = flexboxgrid[`col-sm-${this.props.sm}`];
-      }
-    }
-    if (this.props.md) {
-      if (this.props.md === "auto") {
-        mediumClass = flexboxgrid[`col-md`];
-      } else {
-        mediumClass = flexboxgrid[`col-md-${this.props.md}`];
-      }
-    }
-    if (this.props.lg) {
-      if (this.props.lg === "auto") {
-        largeClass = flexboxgrid[`col-lg`];
-      } else {
-        largeClass = flexboxgrid[`col-lg-${this.props.lg}`];
-      }
-    }
+      [flexboxgrid[`col-xs-${xs}`]]: xs && xs !== "auto",
+      [flexboxgrid[`col-sm-${sm}`]]: sm && sm !== "auto",
+      [flexboxgrid[`col-md-${md}`]]: md && md !== "auto",
+      [flexboxgrid[`col-lg-${lg}`]]: lg && lg !== "auto",
 
-    if (this.props.xsOffset) {
-      extraSmallOffsetClass = flexboxgrid[`col-xs-offset-${this.props.xsOffset}`];
-    }
-    if (this.props.smOffset) {
-      smallOffsetClass = flexboxgrid[`col-sm-offset-${this.props.smOffset}`];
-    }
-    if (this.props.mdOffset) {
-      mediumOffsetClass = flexboxgrid[`col-md-offset-${this.props.mdOffset}`];
-    }
-    if (this.props.lgOffset) {
-      largeOffsetClass = flexboxgrid[`col-lg-offset-${this.props.lgOffset}`];
-    }
+      [flexboxgrid[`col-xs-offset-${xsOffset}`]]: xsOffset,
+      [flexboxgrid[`col-sm-offset-${smOffset}`]]: smOffset,
+      [flexboxgrid[`col-md-offset-${mdOffset}`]]: mdOffset,
+      [flexboxgrid[`col-lg-offset-${lgOffset}`]]: lgOffset,
+
+      [className]: true,
+    });
+
+    // The name of the variable has to start with an uppercase otherwise JSX
+    // would literally create `<element>`.
+    const Element = tagName;
 
     return (
-      <div className={classnames(
-        this.props.className,
-        extraSmallClass,
-        extraSmallOffsetClass,
-        smallClass,
-        smallOffsetClass,
-        mediumClass,
-        mediumOffsetClass,
-        largeClass,
-        largeOffsetClass)}
-        style={styles}>
-        {this.props.children}
-      </div>
+      <Element {...this.props}
+               className={classes}
+               style={styles}>
+        {children}
+      </Element>
     );
   }
 }
