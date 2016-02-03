@@ -13,7 +13,7 @@ class GridRow extends React.Component {
     smVAlign: PropTypes.string,
     mdVAlign: PropTypes.string,
     lgVAlign: PropTypes.string,
-    styles: PropTypes.object,
+    styles: PropTypes.object, // TODO: remove this
     tagName: PropTypes.string,
   };
 
@@ -28,6 +28,12 @@ class GridRow extends React.Component {
       xsVAlign, smVAlign, mdVAlign, lgVAlign,
       styles, tagName, className, children,
     } = this.props;
+
+    if (styles) {
+      if (console && console.warn) {
+        console.warn("The `styles` prop is deprecated and will be removed in the future. Use the standard `style` prop instead.");
+      }
+    }
 
     const classes = classnames({
       [flexboxgrid.reverse]: reverse,
@@ -52,7 +58,7 @@ class GridRow extends React.Component {
     return (
       <Element {...this.props}
                className={classes}
-               style={styles}>
+               style={this.props.style || styles}>
         {children}
       </Element>
     );

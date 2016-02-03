@@ -27,6 +27,12 @@ class GridColumn extends React.Component {
       styles, tagName, className, children,
     } = this.props;
 
+    if (styles) {
+      if (console && console.warn) {
+        console.warn("The `styles` prop is deprecated and will be removed in the future. Use the standard `style` prop instead.");
+      }
+    }
+
     const classes = classnames({
       [flexboxgrid["col-xs"]]: xs && xs === "auto",
       [flexboxgrid["col-sm"]]: sm && sm === "auto",
@@ -53,7 +59,7 @@ class GridColumn extends React.Component {
     return (
       <Element {...this.props}
                className={classes}
-               style={styles}>
+               style={this.props.style || styles}>
         {children}
       </Element>
     );
