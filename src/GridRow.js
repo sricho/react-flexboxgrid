@@ -36,20 +36,19 @@ class GridRow extends React.Component {
     }
 
     const classes = classnames({
+      [flexboxgrid.row]: true,
       [flexboxgrid.reverse]: reverse,
 
-      [flexboxgrid[`${this.props.xsAlign}-xs`]]: xsAlign,
-      [flexboxgrid[`${this.props.smAlign}-sm`]]: smAlign,
-      [flexboxgrid[`${this.props.mdAlign}-md`]]: mdAlign,
-      [flexboxgrid[`${this.props.lgAlign}-lg`]]: lgAlign,
+      [flexboxgrid[`${xsAlign}-xs`]]: xsAlign,
+      [flexboxgrid[`${smAlign}-sm`]]: smAlign,
+      [flexboxgrid[`${mdAlign}-md`]]: mdAlign,
+      [flexboxgrid[`${lgAlign}-lg`]]: lgAlign,
 
-      [flexboxgrid[`${this.props.xsVAlign}-xs`]]: xsVAlign,
-      [flexboxgrid[`${this.props.smVAlign}-sm`]]: smVAlign,
-      [flexboxgrid[`${this.props.mdVAlign}-md`]]: mdVAlign,
-      [flexboxgrid[`${this.props.lgVAlign}-lg`]]: lgVAlign,
-
-      [className]: true,
-    });
+      [flexboxgrid[`${xsVAlign}-xs`]]: xsVAlign,
+      [flexboxgrid[`${smVAlign}-sm`]]: smVAlign,
+      [flexboxgrid[`${mdVAlign}-md`]]: mdVAlign,
+      [flexboxgrid[`${lgVAlign}-lg`]]: lgVAlign,
+    }, className);
 
     // The name of the variable has to start with an uppercase otherwise JSX
     // would literally create `<element>`.

@@ -48,9 +48,7 @@ class GridColumn extends React.Component {
       [flexboxgrid[`col-sm-offset-${smOffset}`]]: smOffset,
       [flexboxgrid[`col-md-offset-${mdOffset}`]]: mdOffset,
       [flexboxgrid[`col-lg-offset-${lgOffset}`]]: lgOffset,
-
-      [className]: true,
-    });
+    }, className);
 
     // The name of the variable has to start with an uppercase otherwise JSX
     // would literally create `<element>`.
