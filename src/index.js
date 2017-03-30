@@ -1,2 +1,3 @@
-export GridRow from "./GridRow";
-export GridColumn from "./GridColumn";
+export Grid from "./Grid";
+export Row from "./Row";
+export Col from "./Col";

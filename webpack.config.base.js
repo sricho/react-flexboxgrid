@@ -6,17 +6,18 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loaders: [
-          'babel?optional[]=runtime&stage=0'
+          'babel'
         ],
-        exclude: /node_modules/
+        exclude: /(node_modules|test)/
       },
       {
         test: /\.css$/,
         loaders: [
+          "style",
           "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
-          "autoprefixer?browsers=last 2 version"
+          "postcss"
         ]
       }
     ]
@@ -26,6 +27,6 @@ module.exports = {
     libraryTarget: 'umd'
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   }
 };
