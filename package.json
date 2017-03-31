@@ -1,6 +1,6 @@
 {
   "name": "react-flexboxgrid",
-  "version": "2.0.0",
+  "version": "0.4.1",
   "description": "React Flexboxgrid components built for use with css modules",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
