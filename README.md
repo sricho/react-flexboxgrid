@@ -10,7 +10,9 @@ npm install react-flexboxgrid --save
 
 ## Usage
 
-```react
+```jsx
+import { Grid, Row, Col } from 'react-flexboxgrid';
+
 <Grid fluid>
   <Row>
     <Col xs={12} md={6}>
