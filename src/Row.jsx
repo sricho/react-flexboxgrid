@@ -1,11 +1,12 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
+import PropTypes from "prop-types";
 import flexboxgrid from "flexboxgrid/dist/flexboxgrid.css";
 
-const DEFAULT_NODE = 'div';
-const HAlignType = PropTypes.oneOf(['start', 'center', 'end']);
-const VAlignType = PropTypes.oneOf(['top', 'middle', 'bottom']);
-const DistributionType = PropTypes.oneOf(['around', 'between'])
+const DEFAULT_NODE = "div";
+const HAlignType = PropTypes.oneOf(["start", "center", "end"]);
+const VAlignType = PropTypes.oneOf(["top", "middle", "bottom"]);
+const DistributionType = PropTypes.oneOf(["around", "between"]);
 
 
 export default class Row extends Component {
@@ -23,7 +24,7 @@ export default class Row extends Component {
     smDistribution: DistributionType,
     mdDistribution: DistributionType,
     lgDistribution: DistributionType,
-    nodeName: PropTypes.string
+    nodeName: PropTypes.string,
   };
 
   static defaultProps = {
@@ -43,8 +44,8 @@ export default class Row extends Component {
     } = this.props;
     const Element = nodeName || DEFAULT_NODE;
     const classes = classnames({
-      [flexboxgrid['row']]: !reverse,
-      [flexboxgrid['row-reverse']]: reverse,
+      [flexboxgrid["row"]]: !reverse,
+      [flexboxgrid["row-reverse"]]: reverse,
       [flexboxgrid[`${xsHAlign}-xs`]]: xsHAlign,
       [flexboxgrid[`${smHAlign}-sm`]]: smHAlign,
       [flexboxgrid[`${mdHAlign}-md`]]: mdHAlign,
@@ -56,7 +57,7 @@ export default class Row extends Component {
       [flexboxgrid[`${xsDistribution}-xs`]]: xsDistribution,
       [flexboxgrid[`${smDistribution}-sm`]]: smDistribution,
       [flexboxgrid[`${mdDistribution}-md`]]: mdDistribution,
-      [flexboxgrid[`${lgDistribution}-lg`]]: lgDistribution
+      [flexboxgrid[`${lgDistribution}-lg`]]: lgDistribution,
     }, className);
 
     return (

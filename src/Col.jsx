@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import classnames from "classnames";
 import flexboxgrid from "flexboxgrid/dist/flexboxgrid.css";
 
-const DEFAULT_NODE = 'div';
+const DEFAULT_NODE = "div";
 const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
-const ReorderType = PropTypes.oneOf(['first', 'last']);
+const ReorderType = PropTypes.oneOf(["first", "last"]);
 
 
 export default class Col extends Component {
@@ -22,7 +23,7 @@ export default class Col extends Component {
     mdReorder: ReorderType,
     lgReorder: ReorderType,
     reverse: PropTypes.bool,
-    nodeName: PropTypes.string
+    nodeName: PropTypes.string,
   };
 
   static defaultProps = {
@@ -43,10 +44,10 @@ export default class Col extends Component {
     } = this.props;
     const Element = nodeName || DEFAULT_NODE;
     const classes = classnames({
-      [flexboxgrid['col-xs' + (Number.isInteger(xs) ? '-' + xs : '')]]: xs,
-      [flexboxgrid['col-sm' + (Number.isInteger(sm) ? '-' + sm : '')]]: sm,
-      [flexboxgrid['col-md' + (Number.isInteger(md) ? '-' + md : '')]]: md,
-      [flexboxgrid['col-lg' + (Number.isInteger(lg) ? '-' + lg : '')]]: lg,
+      [flexboxgrid[`${Number.isInteger(xs) ? `col-xs-${xs}` : ""}`]]: xs,
+      [flexboxgrid[`${Number.isInteger(sm) ? `col-sm-${sm}` : ""}`]]: sm,
+      [flexboxgrid[`${Number.isInteger(md) ? `col-md-${md}` : ""}`]]: md,
+      [flexboxgrid[`${Number.isInteger(lg) ? `col-lg-${lg}` : ""}`]]: lg,
       [flexboxgrid[`col-xs-offset-${xsOffset}`]]: xsOffset,
       [flexboxgrid[`col-sm-offset-${smOffset}`]]: smOffset,
       [flexboxgrid[`col-md-offset-${mdOffset}`]]: mdOffset,
@@ -55,7 +56,7 @@ export default class Col extends Component {
       [flexboxgrid[`${smReorder}-xs`]]: smReorder,
       [flexboxgrid[`${mdReorder}-xs`]]: mdReorder,
       [flexboxgrid[`${lgReorder}-xs`]]: lgReorder,
-      [flexboxgrid['col-reverse']]: reverse
+      [flexboxgrid["col-reverse"]]: reverse,
     }, className);
 
     return (

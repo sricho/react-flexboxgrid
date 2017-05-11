@@ -1,14 +1,15 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
+import PropTypes from "prop-types";
 import flexboxgrid from "flexboxgrid/dist/flexboxgrid.css";
 
-const DEFAULT_NODE = 'div';
+const DEFAULT_NODE = "div";
 
 
 export default class Grid extends Component {
   static propTypes = {
     fluid: PropTypes.bool,
-    nodeName: PropTypes.string
+    nodeName: PropTypes.string,
   };
 
   static defaultProps = {
@@ -25,8 +26,8 @@ export default class Grid extends Component {
     } = this.props;
     const Element = nodeName || DEFAULT_NODE;
     const classes = classnames({
-      [flexboxgrid['container']]: !fluid,
-      [flexboxgrid['container-fluid']]: fluid
+      [flexboxgrid["container"]]: !fluid,
+      [flexboxgrid["container-fluid"]]: fluid,
     }, className);
 
     return (
