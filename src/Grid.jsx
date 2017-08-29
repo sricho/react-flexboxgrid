@@ -5,35 +5,33 @@ import flexboxgrid from "flexboxgrid/dist/flexboxgrid.css";
 
 const DEFAULT_NODE = "div";
 
+const Grid = ({
+  fluid,
+  className,
+  nodeName,
+  children,
+  ...other
+}) => {
+  const Element = nodeName || DEFAULT_NODE;
+  const classes = classnames({
+    [flexboxgrid["container"]]: !fluid,
+    [flexboxgrid["container-fluid"]]: fluid,
+  }, className);
 
-export default class Grid extends Component {
-  static propTypes = {
-    fluid: PropTypes.bool,
-    nodeName: PropTypes.string,
-  };
-
-  static defaultProps = {
-    nodeName: DEFAULT_NODE,
-  };
-
-  render() {
-    const {
-      fluid,
-      className,
-      nodeName,
-      children,
-      ...other
-    } = this.props;
-    const Element = nodeName || DEFAULT_NODE;
-    const classes = classnames({
-      [flexboxgrid["container"]]: !fluid,
-      [flexboxgrid["container-fluid"]]: fluid,
-    }, className);
-
-    return (
-      <Element className={ classes } { ...other }>
-        { children }
-      </Element>
-    );
-  }
+  return (
+    <Element className={ classes } { ...other }>
+      { children }
+    </Element>
+  );
 }
+
+Grid.propTypes = {
+  fluid: PropTypes.bool,
+  nodeName: PropTypes.string,
+};
+
+Grid.defaultProps = {
+  nodeName: DEFAULT_NODE,
+};
+
+export default Grid
